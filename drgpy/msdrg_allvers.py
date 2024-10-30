@@ -41,3 +41,15 @@ class DRGEngineAllVers:
             return self.de39.get_drg(dx_lst, pr_lst, gender, is_alive)
         else:
             return self.de40.get_drg(dx_lst, pr_lst, gender, is_alive)
+    
+    def get_drg_all(self, dx_lst, pr_lst, date, gender="F", is_alive=True):
+        if date <= "2019-09-30":
+            return self.de36.get_drg_all(dx_lst, pr_lst, gender, is_alive)
+        elif date <= "2020-09-30":
+            return self.de37.get_drg_all(dx_lst, pr_lst, gender, is_alive)
+        elif date <= "2021-09-30":
+            return self.de38.get_drg_all(dx_lst, pr_lst, gender, is_alive)
+        elif date <= "2022-09-30":
+            return self.de39.get_drg_all(dx_lst, pr_lst, gender, is_alive)
+        else:
+            return self.de40.get_drg_all(dx_lst, pr_lst, gender, is_alive)

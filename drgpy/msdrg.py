@@ -21,6 +21,10 @@ class DRGEngine:
                 f"data/{version}/mdcs_12_21.txt", dxmap, prmap)
         dxmap, prmap = mdcsrdr.read(
                 f"data/{version}/mdcs_22_25.txt", dxmap, prmap)
+        
+        #print(dxmap)
+        #print(prmap)
+
         self.dxmap = dxmap
         self.prmap = prmap
         self.version = version
@@ -115,6 +119,7 @@ class DRGEngine:
                 else:
                     x.append("_ORPCS_EXTENSIVE")
 
+        if gender not in ['M','F']: raise ValueError(f'Gender not recognized: {gender}. Expected one of M, F.')
         if gender=="F":
             x.append("_FEMALE")
         else:
@@ -209,10 +214,3 @@ class DRGEngine:
         y_all = self.get_drg_all(dx_lst, pr_lst, gender, is_alive) 
         y_all = y_all + ["000"]
         return y_all[0]
-
-        
-
-
-
-
-
